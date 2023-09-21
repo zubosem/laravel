@@ -2882,7 +2882,7 @@ class Builder implements BuilderContract
      */
     protected function runPaginationCountQuery($columns = ['*'])
     {
-        if ($this->groups || $this->havings) {
+        if ($this->distinct || $this->groups || $this->havings) {
             $clone = $this->cloneForPaginationCount();
 
             if (is_null($clone->columns) && ! empty($this->joins)) {
